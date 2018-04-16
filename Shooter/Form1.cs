@@ -13,6 +13,7 @@ namespace Shooter
 {
     public partial class Form1 : Form
     {
+        int counter = 1;
         public Form1()
         {
             InitializeComponent();
@@ -31,12 +32,27 @@ namespace Shooter
             screenshot.CopyFromScreen(0, 0, 0, 0, Screen.PrimaryScreen.Bounds.Size, CopyPixelOperation.SourceCopy);
             //Wyswietlanie screena
             pictureBox1.Image = bmp;
-            pictureBox1.Image.Save("123.png");
+            pictureBox1.Image.Save(counter.ToString() + ".png");
+            counter++;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ScreenShoot(pictureBox1);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            notifyIcon1.Visible = true;
+            notifyIcon1.Icon = Properties.Resources.Invisible_Icon___By_Solitary_Jay;
+            notifyIcon1.Text = "";
+            this.ShowInTaskbar = false;
+            this.Visible = false;
+        }
+
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Clicked");
         }
     }
 }
