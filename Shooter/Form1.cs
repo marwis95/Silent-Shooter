@@ -52,7 +52,9 @@ namespace Shooter
 
         private void notifyIcon1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Clicked");
+            notifyIcon1.Icon = Properties.Resources.circle_32;
+            ScreenShoot(pictureBox1);
+            notifyIcon1.Icon = Properties.Resources.Invisible_Icon___By_Solitary_Jay;
         }
     }
 }

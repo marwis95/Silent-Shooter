@@ -63,6 +63,16 @@ namespace Shooter.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon circle_32 {
+            get {
+                object obj = ResourceManager.GetObject("circle_32", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon Invisible_Icon___By_Solitary_Jay {
             get {
                 object obj = ResourceManager.GetObject("Invisible_Icon___By_Solitary_Jay", resourceCulture);
