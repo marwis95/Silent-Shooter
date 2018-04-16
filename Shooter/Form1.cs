@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Shooter
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void ScreenShoot(PictureBox pictureBox1)
+        {
+            //new Bitmap(szerokość, wysokość, format)
+            Bitmap bmp = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+            Graphics screenshot = Graphics.FromImage(bmp);
+            /*
+            CopyFromScreen(Początek screena od lewej strony, Początek screena od gory ekranu, 
+                     Odleglosc screena od lewej przy wyswietlaniu, Odleglosc screena od góry przy wyswietlaniu, 
+                     Wielkość ekranu, Styl screena); 
+            */
+            screenshot.CopyFromScreen(0, 0, 0, 0, Screen.PrimaryScreen.Bounds.Size, CopyPixelOperation.SourceCopy);
+            //Wyswietlanie screena
+            pictureBox1.Image = bmp;
+            pictureBox1.Image.Save("123.png");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ScreenShoot(pictureBox1);
+        }
+    }
+}
